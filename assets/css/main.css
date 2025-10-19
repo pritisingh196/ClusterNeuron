@@ -4589,3 +4589,107 @@ section,
   }
 }
 
+/* Industries Section Styling */
+.industries .industry-card {
+  background: #ffffff;
+  border: 1px solid rgba(123, 30, 76, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.industries .industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(123, 30, 76, 0.15);
+  border-color: rgba(123, 30, 76, 0.3);
+}
+
+.industries .industry-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #7B1E4C, #a02c5a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.industries .industry-icon i {
+  font-size: 35px;
+  color: white;
+}
+
+.industries .industry-card:hover .industry-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #a02c5a, #c83767);
+}
+
+.industries .industry-card h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.industries .industry-card p {
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.industries .industry-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.industries .feature-tag {
+  background: rgba(123, 30, 76, 0.1);
+  color: #7B1E4C;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(123, 30, 76, 0.2);
+}
+
+.industries .industries-cta {
+  background: linear-gradient(135deg, rgba(123, 30, 76, 0.05), rgba(255, 255, 255, 0.95));
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(123, 30, 76, 0.1);
+}
+
+.industries .industries-cta h3 {
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.industries .industries-cta p {
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .industries .industry-card {
+    padding: 25px 20px;
+  }
+  
+  .industries .industry-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .industries .industry-icon i {
+    font-size: 25px;
+  }
+}
+
