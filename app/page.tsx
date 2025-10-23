@@ -1,50 +1,109 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
-import Features from "@/components/features";
-import Technology from "@/components/technology";
+import Services from "@/components/services";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Simulate loading
+    setMounted(true);
+    // Simulate loading for smooth entrance
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
+  if (!mounted || isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        {/* Loading State with Animation */}
         <div className="text-center">
-          <div className="relative w-16 h-16 mx-auto mb-4">
-            <div className="absolute inset-0 bg-blue-600 rounded-full animate-pulse" />
-            <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center">
-              <div className="w-8 h-8 bg-blue-600 rounded-full animate-ping" />
+          {/* Logo Animation */}
+          <motion.div
+            className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-8"
+            initial={{ scale: 0, rotate: 0 }}
+            animate={{ scale: 1, rotate: 360 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <div className="absolute inset-0 bg-slate-900 rounded-xl shadow-lg" />
+            <div className="absolute inset-1 bg-white rounded-lg flex items-center justify-center">
+              <span className="text-slate-900 font-bold text-lg sm:text-xl">
+                CN
+              </span>
             </div>
-          </div>
-          <p className="text-gray-600 dark:text-gray-400 font-medium">
-            Loading...
-          </p>
+            {/* Rotating Ring */}
+            <motion.div
+              className="absolute inset-0 border-2 border-slate-200 rounded-xl"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          </motion.div>
+
+          {/* Loading Text */}
+          <motion.div
+            className="space-y-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <h2 className="text-xl sm:text-2xl font-light text-slate-900">
+              Cluster Neuron
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600">
+              Loading amazing experiences...
+            </p>
+          </motion.div>
+
+          {/* Progress Dots */}
+          <motion.div
+            className="flex justify-center gap-2 mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+          >
+            {[0, 1, 2].map((index) => (
+              <motion.div
+                key={index}
+                className="w-2 h-2 bg-slate-300 rounded-full"
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.5, 1, 0.5],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  delay: index * 0.2,
+                }}
+              />
+            ))}
+          </motion.div>
         </div>
+
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-white" />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgb(226_232_240)_1px,transparent_1px)]
+                            [background-size:40px_40px] opacity-20"
+        />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <main>
         <Hero />
-        <Features />
-        <Technology />
+        <Services />
         <CTA />
       </main>
       <Footer />

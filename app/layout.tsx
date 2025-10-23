@@ -8,27 +8,34 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cluster Neuron | Advanced AI Solutions",
+  title: "Cluster Neuron | Global IT Services & Consulting",
   description:
-    "Transform your business with cutting-edge AI technology. Cluster Neuron delivers intelligent solutions for modern enterprises.",
+    "Leading global IT services and consulting company. Cluster Neuron provides digital transformation, cloud services, AI solutions, and enterprise consulting to Fortune 500 companies worldwide.",
   keywords: [
-    "AI",
-    "Machine Learning",
-    "Neural Networks",
-    "Artificial Intelligence",
-    "Technology",
+    "IT Services",
+    "Digital Transformation",
+    "Cloud Services",
+    "AI Solutions",
+    "Enterprise Consulting",
+    "Business Process Outsourcing",
+    "Technology Consulting",
+    "Software Development",
+    "Cybersecurity",
+    "Data Analytics",
   ],
   authors: [{ name: "Cluster Neuron" }],
   openGraph: {
-    title: "Cluster Neuron | Advanced AI Solutions",
-    description: "Transform your business with cutting-edge AI technology",
+    title: "Cluster Neuron | Global IT Services & Consulting",
+    description:
+      "Leading global IT services and consulting company providing digital transformation and enterprise solutions",
     type: "website",
     url: "https://clusterneuron.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cluster Neuron | Advanced AI Solutions",
-    description: "Transform your business with cutting-edge AI technology",
+    title: "Cluster Neuron | Global IT Services & Consulting",
+    description:
+      "Leading global IT services and consulting company providing digital transformation and enterprise solutions",
   },
 };
 

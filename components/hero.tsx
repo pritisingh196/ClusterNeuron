@@ -1,185 +1,235 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Phone, Calendar, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
+  initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.8, ease: "easeOut" },
 };
 
 const staggerChildren = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
 
-const floatingElements = [
+const trustIndicators = [
+  { value: "15+", label: "Years Experience" },
+  { value: "200+", label: "Projects Delivered" },
+  { value: "98%", label: "Client Satisfaction" },
+];
+
+const quickActions = [
   {
-    delay: 0,
-    size: "w-20 h-20",
-    color: "bg-blue-400/20",
-    position: "top-20 left-10",
+    icon: Phone,
+    label: "Call Us",
+    value: "+1 (555) 123-4567",
+    href: "tel:+15551234567",
+    description: "Mon-Fri 9AM-6PM EST",
   },
   {
-    delay: 2,
-    size: "w-16 h-16",
-    color: "bg-purple-400/20",
-    position: "top-40 right-20",
+    icon: Mail,
+    label: "Email Us",
+    value: "hello@clusterneuron.com",
+    href: "mailto:hello@clusterneuron.com",
+    description: "We respond within 24 hours",
   },
   {
-    delay: 4,
-    size: "w-24 h-24",
-    color: "bg-pink-400/20",
-    position: "bottom-20 left-1/4",
-  },
-  {
-    delay: 1,
-    size: "w-12 h-12",
-    color: "bg-green-400/20",
-    position: "top-32 right-1/3",
+    icon: Calendar,
+    label: "Book Meeting",
+    value: "Schedule Call",
+    href: "#contact",
+    description: "30-minute consultation",
   },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" />
-
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-600/10 animate-gradient" />
-
-      {/* Floating Elements */}
-      {floatingElements.map((element, index) => (
-        <motion.div
-          key={index}
-          className={`absolute ${element.position} ${element.size} ${element.color} rounded-full animate-float`}
-          style={{ animationDelay: `${element.delay}s` }}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: index * 0.2 }}
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-slate-50 to-white">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"
+          style={{ animationDelay: "2s" }}
         />
-      ))}
+      </div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-grid-black dark:bg-grid-white" />
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgb(226_232_240)_1px,transparent_1px)]
+                          [background-size:40px_40px] opacity-40"
+      />
 
-      {/* Main Content */}
-      <motion.div
-        className="max-w-7xl mx-auto text-center relative z-10"
-        initial="initial"
-        animate="animate"
-        variants={staggerChildren}
-      >
-        {/* Badge */}
-        <motion.div
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-6"
-          variants={fadeInUp}
-        >
-          <Sparkles className="h-4 w-4" />
-          <span>Powered by Advanced AI Technology</span>
-        </motion.div>
+      {/* Main content */}
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center"
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
+          >
+            {/* Status badge */}
+            <motion.div
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full text-sm font-medium text-slate-700 mb-8 shadow-sm"
+              variants={fadeInUp}
+            >
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span>Available for Enterprise Projects</span>
+            </motion.div>
 
-        {/* Main Heading */}
-        <motion.h1
-          className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
-          variants={fadeInUp}
-        >
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Intelligent Solutions
-          </span>
-          <br />
-          <span className="text-gray-900 dark:text-white">
-            for Tomorrow's Challenges
-          </span>
-        </motion.h1>
+            {/* Main headline */}
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 leading-tight tracking-tight"
+              variants={fadeInUp}
+            >
+              <span className="block font-semibold bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+                Enterprise Solutions
+              </span>
+              <span className="block text-slate-600 mt-2">
+                That Drive Growth
+              </span>
+            </motion.h1>
 
-        {/* Description */}
-        <motion.p
-          className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
-          variants={fadeInUp}
-        >
-          Harness the power of advanced AI and neural networks to transform your
-          business. Cluster Neuron delivers cutting-edge technology that learns,
-          adapts, and evolves.
-        </motion.p>
+            {/* Value proposition */}
+            <motion.p
+              className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed px-4"
+              variants={fadeInUp}
+            >
+              Transform your business with cutting-edge technology solutions.
+              From AI implementation to cloud migration, we deliver measurable
+              results that accelerate your digital transformation journey.
+            </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          variants={fadeInUp}
-        >
-          <Button size="lg" className="group text-lg px-8">
-            Start Your Journey
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button variant="outline" size="lg" className="group text-lg px-8">
-            <Play className="mr-2 h-5 w-5" />
-            Watch Demo
-          </Button>
-        </motion.div>
+            {/* Primary CTAs */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4"
+              variants={fadeInUp}
+            >
+              <Button
+                size="lg"
+                className="bg-slate-900 hover:bg-slate-800 text-white text-base sm:text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                asChild
+              >
+                <a href="#contact" className="flex items-center gap-3">
+                  Schedule Consultation
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                </a>
+              </Button>
 
-        {/* Social Proof */}
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-400"
-          variants={fadeInUp}
-        >
-          <div className="flex items-center gap-2">
-            <div className="flex -space-x-2">
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-400 border-2 border-white dark:border-gray-900 flex items-center justify-center text-white text-xs font-bold"
-                >
-                  {String.fromCharCode(65 + i)}
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300 group"
+                asChild
+              >
+                <a href="#services" className="flex items-center gap-3">
+                  Explore Services
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                </a>
+              </Button>
+            </motion.div>
+
+            {/* Trust indicators */}
+            <motion.div
+              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16"
+              variants={fadeInUp}
+            >
+              {trustIndicators.map((indicator, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-1">
+                    {indicator.value}
+                  </div>
+                  <div className="text-sm text-slate-600">
+                    {indicator.label}
+                  </div>
                 </div>
               ))}
-            </div>
-            <span>Trusted by 10,000+ companies</span>
-          </div>
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => (
-              <span key={i} className="text-yellow-400">
-                ★
-              </span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Quick contact bar - only visible on larger screens */}
+      <motion.div
+        className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <div className="bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl shadow-lg p-6">
+          <div className="flex items-center gap-8">
+            {quickActions.map((action, index) => (
+              <a
+                key={index}
+                href={action.href}
+                className="flex items-center gap-3 group hover:bg-slate-50 -mx-2 px-4 py-2 rounded-lg transition-all duration-200"
+              >
+                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center group-hover:bg-slate-900 transition-colors duration-200">
+                  <action.icon className="h-5 w-5 text-slate-600 group-hover:text-white transition-colors duration-200" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-slate-900 group-hover:text-slate-700">
+                    {action.label}
+                  </div>
+                  <div className="text-xs text-slate-500">
+                    {action.description}
+                  </div>
+                </div>
+              </a>
             ))}
-            <span className="ml-1">4.9/5 rating</span>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
 
-      {/* Stats Section */}
+      {/* Mobile quick actions - visible only on mobile */}
       <motion.div
-        className="max-w-7xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-4 gap-8"
-        initial={{ opacity: 0, y: 40 }}
+        className="lg:hidden absolute bottom-8 left-4 right-4"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
       >
-        {[
-          { value: "99.9%", label: "Uptime" },
-          { value: "10M+", label: "API Calls" },
-          { value: "150+", label: "Countries" },
-          { value: "24/7", label: "Support" },
-        ].map((stat, index) => (
-          <motion.div
-            key={index}
-            className="text-center"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              {stat.value}
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-              {stat.label}
-            </div>
-          </motion.div>
-        ))}
+        <div className="bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl shadow-lg p-4">
+          <div className="grid grid-cols-3 gap-2">
+            {quickActions.map((action, index) => (
+              <a
+                key={index}
+                href={action.href}
+                className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+              >
+                <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                  <action.icon className="h-4 w-4 text-slate-600" />
+                </div>
+                <span className="text-xs font-medium text-slate-700">
+                  {action.label}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-32 left-1/2 transform -translate-x-1/2 hidden sm:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        <motion.div
+          className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <div className="w-1 h-3 bg-slate-400 rounded-full mt-2" />
+        </motion.div>
       </motion.div>
     </section>
   );
