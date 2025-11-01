@@ -1,9 +1,13 @@
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+type MotionTextareaProps = Omit<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  keyof MotionProps
+>;
+
+export interface TextareaProps extends MotionTextareaProps {
   label?: string;
   error?: string;
   helperText?: string;
@@ -11,7 +15,8 @@ export interface TextareaProps
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, label, error, helperText, id, ...props }, ref) => {
-    const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+    const textareaId =
+      id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
 
     return (
       <div className="space-y-2">
@@ -32,12 +37,12 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               "transition-all duration-200 resize-y",
               error && "border-red-500 focus-visible:ring-red-500",
               "hover:border-slate-400",
-              className
+              className,
             )}
             ref={ref}
             whileFocus={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            {...props}
+            {...(props as any)}
           />
         </div>
 
@@ -57,7 +62,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 Textarea.displayName = "Textarea";

@@ -1,9 +1,13 @@
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+type MotionInputProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  keyof MotionProps
+>;
+
+export interface InputProps extends MotionInputProps {
   label?: string;
   error?: string;
   helperText?: string;
@@ -38,7 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             whileFocus={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            {...props}
+            {...(props as any)}
           />
 
           {error && (

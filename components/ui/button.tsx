@@ -1,9 +1,13 @@
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type MotionButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  keyof MotionProps
+>;
+
+export interface ButtonProps extends MotionButtonProps {
   variant?:
     | "default"
     | "secondary"
@@ -129,7 +133,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         whileTap={{ scale: loading || disabled ? 1 : 0.98 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         disabled={disabled || loading}
-        {...props}
+        {...(props as any)}
       >
         {buttonContent}
       </motion.button>

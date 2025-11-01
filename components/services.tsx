@@ -68,14 +68,7 @@ const containerVariants = {
 
 const itemVariants = {
   initial: { opacity: 0, y: 30 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
+  animate: { opacity: 1, y: 0 },
 };
 
 export default function Services() {
@@ -139,7 +132,12 @@ export default function Services() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={itemVariants} className="group">
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="group"
+            >
               <div className="h-full bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300 overflow-hidden">
                 {/* Service Header */}
                 <div className="p-6 sm:p-8">
