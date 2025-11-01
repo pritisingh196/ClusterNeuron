@@ -139,19 +139,24 @@ export default function Hero() {
 
             {/* Trust indicators */}
             <motion.div
-              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16"
+              className="max-w-3xl mx-auto mb-16 px-4 sm:px-6"
               variants={fadeInUp}
             >
-              {trustIndicators.map((indicator, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-1">
-                    {indicator.value}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                {trustIndicators.map((indicator, index) => (
+                  <div
+                    key={index}
+                    className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-100"
+                  >
+                    <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
+                      {indicator.value}
+                    </div>
+                    <div className="text-sm sm:text-base text-slate-600 leading-tight">
+                      {indicator.label}
+                    </div>
                   </div>
-                  <div className="text-sm text-slate-600">
-                    {indicator.label}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </div>
