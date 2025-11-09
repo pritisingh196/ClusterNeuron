@@ -29,15 +29,15 @@ const quickActions = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
-    description: "Mon-Fri 9AM-6PM EST",
+    value: "+91 8745845339",
+    href: "tel:+918745845339",
+    description: "Mon-Fri 9AM-6PM IST",
   },
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@clusterneuron.com",
-    href: "mailto:hello@clusterneuron.com",
+    value: "clusterneuronai@gmail.com",
+    href: "mailto:clusterneuronai@gmail.com",
     description: "We respond within 24 hours",
   },
   {
@@ -68,7 +68,7 @@ export default function Hero() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center"
@@ -87,7 +87,7 @@ export default function Hero() {
 
             {/* Main headline */}
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 leading-tight tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-slate-900 mb-6 leading-tight tracking-tight mt-16 md:mt-24"
               variants={fadeInUp}
             >
               <span className="block font-semibold bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
@@ -100,12 +100,11 @@ export default function Hero() {
 
             {/* Value proposition */}
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed px-4"
+              className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed px-6"
               variants={fadeInUp}
             >
-              Transform your business with cutting-edge technology solutions.
-              From AI implementation to cloud migration, we deliver measurable
-              results that accelerate your digital transformation journey.
+              At ClusterNeuron, our mission is to build a dynamic and inclusive community where enthusiasts, students, and professionals can come together to learn, share knowledge, and innovate in the fields of Artificial Intelligence and Machine Learning.
+
             </motion.p>
 
             {/* Primary CTAs */}
