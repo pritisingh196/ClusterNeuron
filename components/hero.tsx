@@ -29,7 +29,7 @@ const quickActions = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+91 8745845339",
+    value: "+91-8745845339",
     href: "tel:+918745845339",
     description: "Mon-Fri 9AM-6PM IST",
   },

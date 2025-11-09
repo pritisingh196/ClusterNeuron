@@ -23,7 +23,7 @@ const mobileQuickActions = [
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:hello@clusterneuron.com",
+    href: "mailto:clusterneuronai@gmail.com",
   },
   {
     icon: Calendar,
@@ -79,7 +79,7 @@ export default function Navigation() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200"
-            : "bg-white/80 backdrop-blur-sm border-b border-transparent",
+            : "bg-white/80 backdrop-blur-sm border-b border-transparent"
         )}
         initial={{ y: -100 }}
         animate={{ y: 0 }}

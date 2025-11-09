@@ -48,7 +48,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Office",
-    value: "San Francisco, CA", // Todo: update address
+    value: "Delhi, India", // Todo: update address
     href: "#",
   },
 ];

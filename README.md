@@ -25,12 +25,14 @@ A modern, beautiful, and production-ready website built with Next.js 16, TypeScr
 ## 📦 Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <your-repo-url>
 cd cluster-neuron-website
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -40,11 +42,13 @@ pnpm install
 ```
 
 3. Copy environment variables:
+
 ```bash
 cp .env.local.example .env.local
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -94,11 +98,13 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 ### Manual Deployment
 
 1. Build the application:
+
 ```bash
 npm run build
 ```
 
 2. Start the production server:
+
 ```bash
 npm start
 ```
@@ -223,7 +229,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For support, please contact:
 
-- **Email**: hello@clusterneuron.com
+- **Email**: clusterneuronai@gmail.com
 - **Website**: https://clusterneuron.com
 - **Documentation**: Check the component files for inline documentation
 

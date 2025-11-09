@@ -10,7 +10,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Call Us",
-    value: "+1 (555) 123-4567",
+    value: "+91-8745845339",
     description: "Mon-Fri 9AM-6PM IST",
     href: "tel:+15551234567",
     color: "from-blue-500 to-cyan-600",
@@ -18,9 +18,9 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
-    value: "hello@clusterneuron.com",
+    value: "clusterneuronai@gmail.com",
     description: "We respond within 24 hours",
-    href: "mailto:hello@clusterneuron.com",
+    href: "mailto:clusterneuronai@gmail.com",
     color: "from-purple-500 to-pink-600",
   },
   {
@@ -289,7 +289,7 @@ export default function CTA() {
                 <span className="text-sm font-medium">Call Now</span>
               </a>
               <a
-                href="mailto:hello@clusterneuron.com"
+                href="mailto:clusterneuronai@gmail.com"
                 className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors"
               >
                 <Mail className="h-4 w-4" />

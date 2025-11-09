@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, AlertCircle, Phone, Mail, MapPin } from "lucide-react";
+import {
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,7 +34,7 @@ const services = [
   "Cybersecurity",
   "Enterprise Systems",
   "Digital Transformation",
-  "Other / General Inquiry"
+  "Other / General Inquiry",
 ];
 
 const fadeInUp = {
@@ -58,7 +65,9 @@ export default function ContactForm() {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -102,10 +111,10 @@ export default function ContactForm() {
   };
 
   const handleInputChange = (field: keyof FormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: "" }));
+      setErrors((prev) => ({ ...prev, [field]: "" }));
     }
   };
 
@@ -121,7 +130,7 @@ export default function ContactForm() {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       // Here you would normally send data to your backend
       console.log("Form submitted:", formData);
@@ -160,7 +169,8 @@ export default function ContactForm() {
         </h3>
         <p className="text-slate-600 mb-8 max-w-md mx-auto">
           We've received your message and will get back to you within 24 hours.
-          Our team is excited to discuss how we can help transform your business.
+          Our team is excited to discuss how we can help transform your
+          business.
         </p>
         <Button
           onClick={() => setSubmitStatus("idle")}
@@ -190,8 +200,8 @@ export default function ContactForm() {
           className="text-lg text-slate-600 max-w-2xl mx-auto"
           variants={fadeInUp}
         >
-          Ready to start your digital transformation journey? Fill out the form below
-          and our expert team will contact you within 24 hours.
+          Ready to start your digital transformation journey? Fill out the form
+          below and our expert team will contact you within 24 hours.
         </motion.p>
       </motion.div>
 
@@ -216,8 +226,10 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="font-medium text-slate-900">Phone</div>
-                  <div className="text-slate-600">+1 (555) 123-4567</div>
-                  <div className="text-sm text-slate-500">Mon-Fri 9AM-6PM IST</div>
+                  <div className="text-slate-600">+91-8745845339</div>
+                  <div className="text-sm text-slate-500">
+                    Mon-Fri 9AM-6PM IST
+                  </div>
                 </div>
               </div>
 
@@ -227,8 +239,12 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="font-medium text-slate-900">Email</div>
-                  <div className="text-slate-600">hello@clusterneuron.com</div>
-                  <div className="text-sm text-slate-500">We respond within 24 hours</div>
+                  <div className="text-slate-600">
+                    clusterneuronai@gmail.com
+                  </div>
+                  <div className="text-sm text-slate-500">
+                    We respond within 24 hours
+                  </div>
                 </div>
               </div>
 
@@ -238,17 +254,17 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="font-medium text-slate-900">Office</div>
-                  <div className="text-slate-600">San Francisco, CA</div>
-                  <div className="text-sm text-slate-500">Available for virtual meetings</div>
+                  <div className="text-slate-600">Delhi, India</div>
+                  <div className="text-sm text-slate-500">
+                    Available for virtual meetings
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="bg-slate-50 rounded-xl p-6">
-            <h4 className="font-medium text-slate-900 mb-3">
-              Why Choose Us?
-            </h4>
+            <h4 className="font-medium text-slate-900 mb-3">Why Choose Us?</h4>
             <ul className="space-y-2 text-sm text-slate-600">
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
@@ -316,7 +332,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
                 error={errors.phone}
-                placeholder="+1 (555) 123-4567"
+                placeholder="+91-8745845339"
                 required
               />
             </div>
@@ -337,7 +353,11 @@ export default function ContactForm() {
               <select
                 value={formData.service}
                 onChange={(e) => handleInputChange("service", e.target.value)}
-                className={`flex h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200 hover:border-slate-400 ${errors.service ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+                className={`flex h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200 hover:border-slate-400 ${
+                  errors.service
+                    ? "border-red-500 focus-visible:ring-red-500"
+                    : ""
+                }`}
                 required
               >
                 <option value="">Select a service</option>
@@ -386,8 +406,8 @@ export default function ContactForm() {
             </Button>
 
             <p className="text-xs text-slate-500 text-center">
-              By submitting this form, you agree to our privacy policy and terms of service.
-              We'll never share your information with third parties.
+              By submitting this form, you agree to our privacy policy and terms
+              of service. We'll never share your information with third parties.
             </p>
           </form>
         </motion.div>
