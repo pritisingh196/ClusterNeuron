@@ -9,6 +9,7 @@ import {
   Code,
   ArrowRight,
   CheckCircle2,
+  Drone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -53,6 +54,14 @@ const services = [
     features: ["Process Automation", "Digital Strategy", "Change Management"],
     color: "from-indigo-500 to-blue-600",
   },
+  {
+    icon: Drone,
+    title: "Drone Services",
+    description:
+      "Innovative drone solutions for data collection and operational efficiency",
+    features: ["Drone Management", "Data Analytics", "Remote Sensing"],
+    color: "from-cyan-500 to-cyan-600",
+  }
 ];
 
 const containerVariants = {

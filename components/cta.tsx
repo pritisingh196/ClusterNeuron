@@ -11,7 +11,7 @@ const contactMethods = [
     icon: Phone,
     title: "Call Us",
     value: "+1 (555) 123-4567",
-    description: "Mon-Fri 9AM-6PM EST",
+    description: "Mon-Fri 9AM-6PM IST",
     href: "tel:+15551234567",
     color: "from-blue-500 to-cyan-600",
   },

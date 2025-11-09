@@ -217,7 +217,7 @@ export default function ContactForm() {
                 <div>
                   <div className="font-medium text-slate-900">Phone</div>
                   <div className="text-slate-600">+1 (555) 123-4567</div>
-                  <div className="text-sm text-slate-500">Mon-Fri 9AM-6PM EST</div>
+                  <div className="text-sm text-slate-500">Mon-Fri 9AM-6PM IST</div>
                 </div>
               </div>
 
