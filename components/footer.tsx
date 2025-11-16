@@ -214,7 +214,7 @@ export default function Footer() {
               >
                 <span>Enterprise IT Solutions & Consulting</span>
                 <div className="hidden sm:block w-px h-4 bg-slate-700" />
-                <span>Built with expertise in San Francisco</span>
+                <span>Built with expertise in Delhi, India</span>
               </motion.div>
 
               {/* Social Links */}

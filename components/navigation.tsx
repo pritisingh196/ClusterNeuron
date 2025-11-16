@@ -93,9 +93,11 @@ export default function Navigation() {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-lg">CN</span>
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Cluster Neuron Logo"
+                className="w-10 h-10 object-contain rounded-xl shadow-sm"
+              />
               <span className="text-xl font-light text-slate-900 tracking-tight hidden sm:block">
                 Cluster Neuron
               </span>
@@ -122,14 +124,33 @@ export default function Navigation() {
             </div>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex items-center space-x-4">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <Button className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">
+                <Button className="bg-slate-900 hover:bg-slate-800 text-white px-6  py-2.5 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">
                   Get Started
+                </Button>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.35 }}
+              >
+                <Button
+                  asChild
+                  className="bg-green-600 hover:bg-green-500 text-white px-6 py-2.5 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <a
+                    href="https://www.whatsapp.com/channel/0029VbAfDvkFMqre8rdono1t"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Join Community
+                  </a>
                 </Button>
               </motion.div>
             </div>
