@@ -145,7 +145,7 @@ export default function Navigation() {
                   className="bg-green-600 hover:bg-green-500 text-white px-6 py-2.5 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200"
                 >
                   <a
-                    href="https://www.whatsapp.com/channel/0029VbAfDvkFMqre8rdono1t"
+                    href="https://chat.whatsapp.com/LVt4h7t4W5BElw3XoAUVkX"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
