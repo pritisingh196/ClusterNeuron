@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - ClusterNeuron */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Primary Brand: Deep Purple/Maroon #7B1E4C */
+    --primary: 336 63% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 336 63% 40%;
+    --primary-glow: 336 63% 50%;
+
+    /* Secondary Accent: Lighter Purple #9B2E5C */
+    --secondary: 336 56% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 336 63% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 336 63% 30%;
+
+    --radius: 0.75rem;
+
+    /* Dark Background Gradient Colors */
+    --dark-bg-start: 240 71% 4%;
+    --dark-bg-mid: 270 37% 6%;
+    --dark-bg-end: 280 28% 13%;
+
+    /* Gradient Definitions */
+    --gradient-primary: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-bg-start)) 0%, hsl(var(--dark-bg-mid)) 50%, hsl(var(--dark-bg-end)) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.3), transparent);
+    
+    /* Shadow Definitions */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--primary) / 0.4);
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 50px hsl(var(--primary-glow) / 0.5);
+
+    /* Animation Timing */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 240 71% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 71% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 71% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 336 63% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 336 56% 60%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 336 63% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 336 63% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elegant;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Fix typing cursor visibility with gradient text */
+  .gradient-text .Typist-cursor,
+  .gradient-text .type-animation-cursor {
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* TypeAnimation cursor styling */
+  .Type__cursor {
+    color: hsl(var(--primary-glow));
+    opacity: 1;
+    animation: blink 1s infinite;
+  }
+
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+}
+
+/* Global TypeAnimation cursor override */
+span.Type__cursor {
+  color: hsl(336, 63%, 50%) !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: hsl(336, 63%, 50%) !important;
+  font-weight: 100 !important;
+  font-size: 1em !important;
+}
+
+/* Gradient text for typing animation with visible cursor */
+.gradient-typing-text {
+  display: inline;
+  background: linear-gradient(45deg, hsl(336, 63%, 40%), hsl(336, 56%, 50%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom typing cursor */
+.typing-cursor {
+  display: inline-block;
+  color: hsl(336, 63%, 50%);
+  font-weight: 100;
+  margin-left: 2px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.8);
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar for dropdowns */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Animated border spin effect */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
