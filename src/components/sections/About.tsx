@@ -126,7 +126,7 @@ const About = () => {
               {/* Stats Card */}
               <motion.div
                 className="absolute -top-6 -right-6 bg-background border border-border rounded-xl shadow-elegant p-6 animate-float"
-                style={{ animationDelay: "0.5s" }}
+                style={{ animationDelay: "0.5s",marginRight:"8px" }}
               >
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
