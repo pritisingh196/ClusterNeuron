@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "../ui/button";
 import ParticleBackground from "../ParticleBackground";
-import { TrendingUp, Users, Briefcase } from "lucide-react";
+import { TrendingUp, Users } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -115,18 +115,12 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative rounded-3xl overflow-hidden animate-float shadow-glow">
-              {/* Image Placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center backdrop-blur-sm border border-white/10">
-                <div className="text-center p-8">
-                  <Briefcase className="w-24 h-24 text-primary-glow mx-auto mb-4" />
-                  <p className="text-white text-lg font-medium">
-                    [HERO_IMAGE_PLACEHOLDER]
-                  </p>
-                  <p className="text-gray-400 text-sm mt-2">
-                    Digital agency hero illustration
-                  </p>
-                </div>
-              </div>
+              {/* Hero Image */}
+              <img 
+                src="/hero-section-image.png" 
+                alt="ClusterNeuron Digital Solutions"
+                className="w-full h-auto object-cover"
+              />
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent pointer-events-none" />
             </div>
