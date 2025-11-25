@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CheckCircle, Building2, Calendar } from "lucide-react";
+import { CheckCircle, Calendar } from "lucide-react";
 import { Button } from "../ui/button";
 
 const About = () => {
@@ -101,13 +101,11 @@ const About = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center border border-border">
-                  <div className="text-center p-8">
-                    <Building2 className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <p className="text-foreground font-medium">[ABOUT_MAIN_IMAGE_PLACEHOLDER]</p>
-                    <p className="text-muted-foreground text-sm mt-2">Modern office with a team working</p>
-                  </div>
-                </div>
+                <img 
+                  src="/ABOUT_MAIN_IMAGE_PLACEHOLDER.png" 
+                  alt="ClusterNeuron Team Working"
+                  className="w-full h-auto object-cover aspect-[4/3]"
+                />
               </motion.div>
 
               {/* Secondary Floating Image */}
@@ -115,12 +113,11 @@ const About = () => {
                 className="absolute -bottom-10 -left-10 w-48 h-48 rounded-xl overflow-hidden shadow-glow animate-float"
                 style={{ animationDelay: "1s" }}
               >
-                <div className="w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center border border-border backdrop-blur-sm">
-                  <div className="text-center p-4">
-                    <p className="text-xs text-foreground font-medium">[ABOUT_SECONDARY_IMAGE]</p>
-                    <p className="text-xs text-muted-foreground mt-1">Collaboration</p>
-                  </div>
-                </div>
+                <img 
+                  src="/ABOUT_SECONDARY_IMAGE.png" 
+                  alt="Team Collaboration"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
 
               {/* Stats Card */}
