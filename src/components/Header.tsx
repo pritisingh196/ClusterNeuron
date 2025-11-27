@@ -97,9 +97,9 @@ const Header = () => {
           transition={{ delay: 0.2, duration: 0.4 }}
         >
           {/* Animated border container */}
-          <div className="relative p-[2px] md:p-[3px] rounded-2xl xl:rounded-full overflow-hidden">
+          <div className="relative p-[2px] md:p-[3px] rounded-2xl xl:rounded-full">
             {/* Animated gradient border */}
-            <div className="absolute inset-0 rounded-2xl xl:rounded-full">
+            <div className="absolute inset-0 rounded-2xl xl:rounded-full overflow-hidden">
               <div 
                 className="absolute inset-0 rounded-2xl xl:rounded-full animate-spin-slow"
                 style={{
@@ -179,7 +179,8 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 min-w-[260px] z-50"
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[260px]"
+                        style={{ zIndex: 9999 }}
                       >
                         {/* Dropdown with animated border */}
                         <div className="relative p-[1px] rounded-2xl overflow-hidden">
@@ -253,7 +254,8 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 min-w-[280px] z-50"
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[280px]"
+                        style={{ zIndex: 9999 }}
                       >
                         {/* Dropdown with animated border */}
                         <div className="relative p-[1px] rounded-2xl overflow-hidden">
