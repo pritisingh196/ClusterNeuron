@@ -22,6 +22,7 @@ const Team = () => {
       bio: "Visionary founder with a mission to empower businesses through technology, creativity, and innovation. Leading ClusterNeuron's strategic direction and growth.",
       email: "info@clusterneuron.com",
       linkedin: "https://www.linkedin.com/company/clusterneuron/",
+      image: "/people/priti.png",
     },
     {
       name: "Vikram Patel",
@@ -29,6 +30,7 @@ const Team = () => {
       bio: "Leads technical strategy with 15+ years of experience in enterprise solutions, cloud infrastructure, and AI implementation.",
       email: "info@clusterneuron.com",
       linkedin: "#",
+      image: null,
     },
     {
       name: "Neha Gupta",
@@ -36,6 +38,7 @@ const Team = () => {
       bio: "Ensures seamless project delivery and operational excellence, managing cross-functional teams and client relationships.",
       email: "info@clusterneuron.com",
       linkedin: "#",
+      image: null,
     },
     {
       name: "Arjun Singh",
@@ -43,6 +46,7 @@ const Team = () => {
       bio: "Drives business growth through strategic partnerships, market expansion, and client acquisition across multiple industries.",
       email: "info@clusterneuron.com",
       linkedin: "#",
+      image: null,
     },
   ];
 
@@ -160,10 +164,18 @@ const Team = () => {
               >
                 {/* Leader Image */}
                 <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center border border-border">
-                  <div className="text-center p-4">
-                    <Users className="w-16 h-16 text-primary/30 mx-auto mb-2" />
-                    <p className="text-xs text-muted-foreground">[LEADER_IMAGE_{activeLeader + 1}]</p>
-                  </div>
+                  {leaders[activeLeader].image ? (
+                    <img 
+                      src={leaders[activeLeader].image} 
+                      alt={leaders[activeLeader].name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="text-center p-4">
+                      <Users className="w-16 h-16 text-primary/30 mx-auto mb-2" />
+                      <p className="text-xs text-muted-foreground">[LEADER_IMAGE_{activeLeader + 1}]</p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Leader Info */}
