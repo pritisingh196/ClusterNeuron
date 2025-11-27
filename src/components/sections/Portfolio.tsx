@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Star, Eye, ExternalLink, Layers } from "lucide-react";
+import { Star, Eye, ExternalLink } from "lucide-react";
 import { Badge } from "../ui/badge";
 
 const Portfolio = () => {
@@ -25,6 +25,7 @@ const Portfolio = () => {
       rating: 4.8,
       tech: ["React", "Node.js", "AWS"],
       description: "Modern and responsive web platform with cutting-edge design and functionality.",
+      image: "/portfolio/portfolio_images01.png",
     },
     {
       title: "AI-Powered Productivity App",
@@ -32,6 +33,7 @@ const Portfolio = () => {
       rating: 4.9,
       tech: ["Machine Learning", "Data Annotation", "AI Analytics"],
       description: "Intelligent productivity assistant with AI-driven task management, data annotation features, and automated workflow optimization for enhanced business efficiency.",
+      image: "/portfolio/portfolio_images02.png",
     },
     {
       title: "Modern Brand Identity",
@@ -39,6 +41,7 @@ const Portfolio = () => {
       rating: 5.0,
       tech: ["Illustrator", "Figma", "Brand"],
       description: "Complete brand identity package with logo, color palette, typography, and brand guidelines.",
+      image: "/portfolio/portfolio_images03.png",
     },
     {
       title: "SaaS Dashboard Design",
@@ -46,6 +49,7 @@ const Portfolio = () => {
       rating: 4.7,
       tech: ["Figma", "Prototyping", "UX"],
       description: "Intuitive dashboard interface for SaaS platform with data visualization and user management.",
+      image: "/portfolio/portfolio_images04.png",
     },
     {
       title: "E-commerce Platform",
@@ -53,6 +57,7 @@ const Portfolio = () => {
       rating: 4.6,
       tech: ["Shopify", "React", "API"],
       description: "Full-featured e-commerce solution with payment integration and inventory management.",
+      image: "/portfolio/portfolio_images05.png",
     },
     {
       title: "AI Data Annotation Platform",
@@ -60,6 +65,7 @@ const Portfolio = () => {
       rating: 5.0,
       tech: ["TensorFlow", "Computer Vision", "Python"],
       description: "Advanced AI annotation platform for machine learning datasets with automated tagging and quality control.",
+      image: "/portfolio/portfolio_images06.png",
     },
   ];
 
@@ -114,16 +120,13 @@ const Portfolio = () => {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               layout
             >
-              {/* Image Placeholder */}
-              <div className="relative aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Layers className="w-16 h-16 text-primary/30" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <p className="text-sm text-muted-foreground">[PROJECT_IMAGE_PLACEHOLDER_{idx + 1}]</p>
-                  </div>
-                </div>
+              {/* Project Image */}
+              <div className="relative aspect-video overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
 
                 {/* Hover Overlay */}
                 <motion.div
