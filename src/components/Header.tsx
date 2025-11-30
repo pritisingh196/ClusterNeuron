@@ -300,6 +300,21 @@ const Header = () => {
 
                 <NavLink href="#team" label="Team" id="team" />
                 <NavLink href="#contact" label="Contact" id="contact" />
+                
+                {/* Career Link with Badge */}
+                <a
+                  href="/career"
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full group whitespace-nowrap flex items-center gap-2 ${
+                    isDarkSection 
+                      ? "text-white/70 hover:text-white" 
+                      : "text-gray-700 hover:text-gray-900"
+                  }`}
+                >
+                  <span>Career</span>
+                  <span className="px-1.5 py-0.5 text-[10px] font-bold bg-gradient-to-r from-primary to-secondary text-white rounded-full animate-pulse">
+                    HIRING
+                  </span>
+                </a>
               </nav>
 
               {/* CTA Button - Desktop */}
@@ -410,6 +425,24 @@ const Header = () => {
                           {link.label}
                         </motion.a>
                       ))}
+                      
+                      {/* Career Link - Mobile */}
+                      <motion.a
+                        href="/career"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className={`py-3 px-4 rounded-xl font-medium transition-all duration-300 text-sm md:text-base flex items-center justify-between ${
+                          isDarkSection
+                            ? "text-white/70 hover:text-white hover:bg-white/5"
+                            : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                        }`}
+                      >
+                        <span>Career</span>
+                        <span className="px-2 py-1 text-[10px] font-bold bg-gradient-to-r from-primary to-secondary text-white rounded-full animate-pulse">
+                          WE'RE HIRING
+                        </span>
+                      </motion.a>
                       
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
