@@ -56,7 +56,7 @@ const Header = () => {
 
   const NavLink = ({ href, label, id }: { href: string; label: string; id: string }) => (
     <a
-      href={href}
+      href={`/${href}`}
       className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full group whitespace-nowrap ${
         activeLink === id
           ? "text-white"
@@ -203,7 +203,7 @@ const Header = () => {
                               {services.map((service, idx) => (
                                 <motion.a
                                   key={idx}
-                                  href={service.href}
+                                  href={`/${service.href}`}
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: idx * 0.05 }}
@@ -278,7 +278,7 @@ const Header = () => {
                               {industries.map((industry, idx) => (
                                 <motion.a
                                   key={idx}
-                                  href="#industries"
+                                  href="/#industries"
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: idx * 0.03 }}
@@ -325,7 +325,7 @@ const Header = () => {
               >
                 <Button
                   className="relative overflow-hidden bg-gradient-to-r from-primary via-primary-light to-secondary text-white font-semibold px-5 py-2 rounded-full shadow-[0_4px_20px_rgba(123,30,76,0.4)] hover:shadow-[0_6px_30px_rgba(123,30,76,0.6)] transition-all duration-300 group"
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => window.location.href = "/#contact"}
                 >
                   {/* Shine effect */}
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -399,13 +399,13 @@ const Header = () => {
                   }`}>
                     <nav className="flex flex-col p-3 md:p-4 gap-1 font-nav max-h-[70vh] overflow-y-auto">
                       {[
-                        { label: "Home", href: "#hero", id: "hero" },
-                        { label: "About", href: "#about", id: "about" },
-                        { label: "Services", href: "#services", id: "services" },
-                        { label: "Portfolio", href: "#portfolio", id: "portfolio" },
-                        { label: "Industries", href: "#industries", id: "industries" },
-                        { label: "Team", href: "#team", id: "team" },
-                        { label: "Contact", href: "#contact", id: "contact" },
+                        { label: "Home", href: "/#hero", id: "hero" },
+                        { label: "About", href: "/#about", id: "about" },
+                        { label: "Services", href: "/#services", id: "services" },
+                        { label: "Portfolio", href: "/#portfolio", id: "portfolio" },
+                        { label: "Industries", href: "/#industries", id: "industries" },
+                        { label: "Team", href: "/#team", id: "team" },
+                        { label: "Contact", href: "/#contact", id: "contact" },
                       ].map((link, idx) => (
                         <motion.a
                           key={link.id}
@@ -454,7 +454,7 @@ const Header = () => {
                           className="w-full bg-gradient-to-r from-primary via-primary-light to-secondary text-white font-semibold py-3 rounded-xl shadow-lg text-sm md:text-base"
                           onClick={() => {
                             setIsMobileMenuOpen(false);
-                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                            window.location.href = "/#contact";
                           }}
                         >
                           <Sparkles className="w-4 h-4 mr-2" />
