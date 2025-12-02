@@ -9,13 +9,13 @@ const Clients = () => {
 
   // Client data with available images
   const clients = [
-    { name: "Kri8ive", image: "/client_images/WhatsApp Image 2025-12-01 at 12.51.44 AM.jpeg" },
-    { name: "Physics Wallah", image: "/client_images/WhatsApp Image 2025-12-01 at 12.52.27 AM.jpeg" },
-    { name: "NEXTGENAI", image: "/client_images/WhatsApp Image 2025-12-01 at 12.54.24 AM.jpeg" },
-    { name: "Syndex AI Solution", image: "/client_images/WhatsApp Image 2025-12-01 at 12.58.23 AM.jpeg" },
-    { name: "Dataplus Company", image: null },
+    { name: "Kri8ive", image: null },
+    { name: "Physics Wallah", image: "/client_images/pw.jpeg" },
+    { name: "NEXTGENAI", image: "/client_images/nextgenai.jpeg" },
+    { name: "Syndex AI Solution", image: null },
+    { name: "Dataplus Company", image: "/client_images/data-pulse.jpeg" },
     { name: "Larc Sovereign Group", image: null },
-    { name: "Consultbae", image: null },
+    { name: "Consultbae", image: "/client_images/consultbae.jpeg" },
     { name: "DY Dream Work Community", image: null },
     { name: "Reddy's e-Tech Solutions", image: null },
     { name: "Ahmed Warsi Project", image: null },

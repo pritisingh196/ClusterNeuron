@@ -61,20 +61,20 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary-glow flex-shrink-0 mt-0.5" />
                 <p className="text-background/80">
-                  Krishna Nagar East<br />
-                  Delhi – 110051, India
+                  New Ashok Nagar<br />
+                  New Delhi, India
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary-glow flex-shrink-0" />
-                <a href="tel:+919798980968" className="text-background/80 hover:text-primary-glow transition-colors">
-                  +91 9798980968
+                <a href="tel:+918745845339" className="text-background/80 hover:text-primary-glow transition-colors">
+                  +91 8745845339
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary-glow flex-shrink-0" />
-                <a href="mailto:info@clusterneuron.com" className="text-background/80 hover:text-primary-glow transition-colors">
-                  info@clusterneuron.com
+                <a href="mailto:clusterNeuronai@gmail.com" className="text-background/80 hover:text-primary-glow transition-colors">
+                  clusterNeuronai@gmail.com
                 </a>
               </div>
             </div>

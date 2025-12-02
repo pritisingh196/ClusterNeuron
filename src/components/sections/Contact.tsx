@@ -33,16 +33,16 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      value: "info@clusterneuron.com",
+      value: "clusterNeuronai@gmail.com",
       subtitle: "Response in 2-4 hours",
-      link: "mailto:info@clusterneuron.com",
+      link: "mailto:clusterNeuronai@gmail.com",
     },
     {
       icon: Phone,
       title: "Call Us",
-      value: "+91 9798980968",
+      value: "+91 8745845339",
       subtitle: "Mon-Sat, 9AM-7PM IST",
-      link: "tel:+919798980968",
+      link: "tel:+918745845339",
     },
     {
       icon: Users,
