@@ -28,7 +28,7 @@ const Team = () => {
       name: "Kunal Kumar",
       role: "Full Stack Developer",
       bio: "Full-stack developer specializing in AI-powered applications, integrating intelligent systems to deliver scalable, high-impact solutions.",
-      email: "clusterNeuronai@gmail.com",
+      email: "geeky8790kk@gmail.com",
       linkedin: "https://www.linkedin.com/in/kunal2006/",
       image: "/people/kunal-full-stack-developer.jpeg",
     },
