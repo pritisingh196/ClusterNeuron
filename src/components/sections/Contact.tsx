@@ -45,11 +45,11 @@ const Contact = () => {
       link: "tel:+918745845339",
     },
     {
-      icon: Users,
-      title: "Join Community",
-      value: "nexfellow.com/community/pritisingh",
-      subtitle: "Connect & Collaborate",
-      link: "https://nexfellow.com/community/pritisingh",
+      icon: MapPin,
+      title: "Visit Us",
+      value: "New Ashok Nagar, New Delhi – 110096",
+      subtitle: "India",
+      link: "https://maps.google.com/?q=New+Ashok+Nagar+New+Delhi+110096",
     },
   ];
 
@@ -181,26 +181,13 @@ const Contact = () => {
               </motion.a>
             ))}
 
-            {/* Address Card */}
+            {/* Map View */}
             <motion.div
               className="bg-background rounded-xl p-6 border border-border"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-heading font-bold mb-1">Visit Us</h4>
-                  <p className="text-muted-foreground">
-                    Krishna Nagar East<br />
-                    Delhi – 110051, India
-                  </p>
-                </div>
-              </div>
-
               {/* Map Placeholder */}
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
                 <p className="text-sm text-muted-foreground">[GOOGLE_MAPS_EMBED_PLACEHOLDER]</p>

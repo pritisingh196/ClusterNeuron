@@ -9,26 +9,10 @@ const Clients = () => {
 
   // Client data with available images
   const clients = [
-    { name: "Kri8ive", image: null },
     { name: "Physics Wallah", image: "/client_images/pw.jpeg" },
     { name: "NEXTGENAI", image: "/client_images/nextgenai.jpeg" },
-    { name: "Syndex AI Solution", image: null },
     { name: "Dataplus Company", image: "/client_images/data-pulse.jpeg" },
-    { name: "Larc Sovereign Group", image: null },
     { name: "Consultbae", image: "/client_images/consultbae.jpeg" },
-    { name: "DY Dream Work Community", image: null },
-    { name: "Reddy's e-Tech Solutions", image: null },
-    { name: "Ahmed Warsi Project", image: null },
-    { name: "Ashis Sarkar Client", image: null },
-    { name: "Delta Group", image: null },
-    { name: "LocalizeXpert", image: null },
-    { name: "AS 24X7 Services", image: null },
-    { name: "Rabia Abbas", image: null },
-    { name: "TrueText Pvt Ltd", image: null },
-    { name: "Ashutosh", image: null },
-    { name: "AssertAi Consult", image: null },
-    { name: "Munif Enterprise", image: null },
-    { name: "All Sec Pvt Ltd", image: null },
   ];
 
   // Duplicate for seamless loop
@@ -181,7 +165,7 @@ const Clients = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           {[
-            { number: "20+", label: "Happy Clients" },
+            { number: "4+", label: "Happy Clients" },
             { number: "50+", label: "Projects Delivered" },
             { number: "5+", label: "Countries" },
             { number: "100%", label: "Satisfaction" },

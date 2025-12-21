@@ -25,28 +25,12 @@ const Team = () => {
       image: "/people/priti.png",
     },
     {
-      name: "Vikram Patel",
-      role: "Technology Director",
-      bio: "Leads technical strategy with 15+ years of experience in enterprise solutions, cloud infrastructure, and AI implementation.",
+      name: "Kunal Kumar",
+      role: "Full Stack Developer",
+      bio: "Full-stack developer specializing in AI-powered applications, integrating intelligent systems to deliver scalable, high-impact solutions.",
       email: "clusterNeuronai@gmail.com",
-      linkedin: "#",
-      image: null,
-    },
-    {
-      name: "Neha Gupta",
-      role: "Operations Manager",
-      bio: "Ensures seamless project delivery and operational excellence, managing cross-functional teams and client relationships.",
-      email: "clusterNeuronai@gmail.com",
-      linkedin: "#",
-      image: null,
-    },
-    {
-      name: "Arjun Singh",
-      role: "Business Development Head",
-      bio: "Drives business growth through strategic partnerships, market expansion, and client acquisition across multiple industries.",
-      email: "clusterNeuronai@gmail.com",
-      linkedin: "#",
-      image: null,
+      linkedin: "https://www.linkedin.com/in/kunal2006/",
+      image: "/people/kunal-full-stack-developer.jpeg",
     },
   ];
 
