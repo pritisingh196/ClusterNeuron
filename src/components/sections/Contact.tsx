@@ -183,15 +183,22 @@ const Contact = () => {
 
             {/* Map View */}
             <motion.div
-              className="bg-background rounded-xl p-6 border border-border"
+              className="bg-background rounded-xl overflow-hidden border border-border"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
             >
-              {/* Map Placeholder */}
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <p className="text-sm text-muted-foreground">[GOOGLE_MAPS_EMBED_PLACEHOLDER]</p>
-              </div>
+              {/* Google Maps Embed */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28008.15842326194!2d77.2848!3d28.6470!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfce26ec085ef%3A0x441e32f4fa5002a!2sNew%20Ashok%20Nagar%2C%20New%20Delhi%2C%20Delhi%20110096!5e0!3m2!1sen!2sin!4v1703347200000!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="ClusterNeuron Office Location"
+              />
             </motion.div>
           </motion.div>
         </div>
