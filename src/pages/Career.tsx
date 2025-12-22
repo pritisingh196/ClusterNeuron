@@ -28,6 +28,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Header from "@/components/Header";
 import Footer from "@/components/sections/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
+import { API_ENDPOINTS } from "@/config";
 
 interface Experience {
   id: string;
@@ -162,10 +163,51 @@ const Career = () => {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const formData = new FormData();
+      
+      // Personal info
+      formData.append("first_name", personalInfo.firstName);
+      formData.append("last_name", personalInfo.lastName);
+      formData.append("email", personalInfo.email);
+      formData.append("phone", personalInfo.phone);
+      formData.append("location", personalInfo.location);
+      formData.append("linkedin", personalInfo.linkedin);
+      formData.append("portfolio", personalInfo.portfolio);
+      formData.append("position", selectedPosition);
+      
+      // Package additional data as JSON
+      const extras = {
+        experiences,
+        education,
+        skills,
+        coverLetter,
+      };
+      formData.append("extras", JSON.stringify(extras));
+      
+      // Attach CV file
+      if (cvFile) {
+        formData.append("cv", cvFile);
+      }
+
+      const response = await fetch(API_ENDPOINTS.career, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSubmitted(true);
+      } else {
+        alert(data.errors ? Object.values(data.errors).join("\n") : "Submission failed. Please check your information.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      alert("Network error. Please check your connection and try again.");
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [

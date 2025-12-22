@@ -9,10 +9,10 @@ const Team = () => {
   const [activeLeader, setActiveLeader] = useState(0);
 
   const teamMembers = [
-    { name: "Rahul Kumar", role: "Digital Marketing Lead" },
-    { name: "Anjali Verma", role: "Software Architect" },
-    { name: "Sanjay Mehta", role: "Video Production Head" },
-    { name: "Priya Sharma", role: "AI Solutions Specialist" },
+    { name: "Rahul Kumar", role: "Digital Marketing Lead", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul&backgroundColor=7B1E4C" },
+    { name: "Anjali Verma", role: "Software Architect", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Anjali&backgroundColor=9933CC" },
+    { name: "Sanjay Mehta", role: "Video Production Head", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Sanjay&backgroundColor=7B1E4C" },
+    { name: "Priya Sharma", role: "AI Solutions Specialist", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Priya&backgroundColor=9933CC" },
   ];
 
   const leaders = [
@@ -98,14 +98,12 @@ const Team = () => {
               >
                 {/* Hexagon Card */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 border border-border">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Users className="w-16 h-16 text-primary/30" />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-xs text-muted-foreground text-center px-4">
-                      [TEAM_MEMBER_IMAGE_{idx + 1}]
-                    </p>
-                  </div>
+                  {/* Team Member Image */}
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-primary/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
