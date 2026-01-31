@@ -32,6 +32,14 @@ const Team = () => {
       linkedin: "https://www.linkedin.com/in/kunal2006/",
       image: "/people/kunal-full-stack-developer.jpeg",
     },
+    {
+      name: "Anas M Shaikh",
+      role: "ML Engineer",
+      bio: "ML Engineer specializing in AI-powered applications, integrating intelligent systems to deliver scalable, high-impact solutions.",
+      email: "",
+      linkedin: "",
+      image: "/people/anas.jpeg",
+    },
   ];
 
   const nextLeader = () => {
