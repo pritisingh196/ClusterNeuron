@@ -19,6 +19,11 @@ const Clients = () => {
     { name: "swoc", image: "/client_images/swoc.jpeg" },
     { name: "truetext", image: "/client_images/truetext.jpeg" },
     { name: "xyntriq", image: "/client_images/xyntriq.jpeg" },
+    { name: "vvp softtech", image: "/client_images/vvp_softtech.jpeg" },
+    { name: "e solution", image: "/client_images/e_solution.jpeg" },
+    { name: "tech altum", image: "/client_images/tech_altum.jpeg" },
+    { name: "transcom", image: "/client_images/transcom.jpeg" },
+    { name: "byteproc", image: "/client_images/byteproc.jpeg" },
   ];
 
   // Duplicate for seamless loop
