@@ -9,10 +9,8 @@ const Team = () => {
   const [activeLeader, setActiveLeader] = useState(0);
 
   const teamMembers = [
-    { name: "Rahul Kumar", role: "Digital Marketing Lead", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul&backgroundColor=7B1E4C" },
-    { name: "Anjali Verma", role: "Software Architect", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Anjali&backgroundColor=9933CC" },
-    { name: "Sanjay Mehta", role: "Video Production Head", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Sanjay&backgroundColor=7B1E4C" },
-    { name: "Priya Sharma", role: "AI Solutions Specialist", image: "https://api.dicebear.com/7.x/notionists/svg?seed=Priya&backgroundColor=9933CC" },
+    { name: "Priti Singh", role: "Founder & CEO", image: "/people/priti.jpeg" },
+    { name: "Kunal Kumar", role: "Full Stack Developer", image: "/people/kunal-full-stack-developer.jpeg" },
   ];
 
   const leaders = [
@@ -22,7 +20,7 @@ const Team = () => {
       bio: "Visionary founder with a mission to empower businesses through technology, creativity, and innovation. Leading ClusterNeuron's strategic direction and growth.",
       email: "clusterNeuronai@gmail.com",
       linkedin: "https://www.linkedin.com/company/clusterneuron/",
-      image: "/people/priti.png",
+      image: "/people/priti.jpeg",
     },
     {
       name: "Kunal Kumar",
